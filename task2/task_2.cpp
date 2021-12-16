@@ -40,30 +40,6 @@ void zero_init_matrix(double** matrix, int n)
 			matrix[i][j] = 0.0;
 }
 
-void ijk_multiplication(double** matA, double** matB, double** res_mat, int n)
-{
-    for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			for (int k = 0; k < n; k++)
-				res_mat[i][j] += matA[i][k] * matB[k][j];
-}
-
-void jki_multiplication(double** matA, double** matB, double** res_mat, int n)
-{
-    for (int j = 0; j < n; j++)
-		for (int k = 0; k < n; k++)
-			for (int i = 0; i < n; i++)
-				res_mat[i][j] += matA[i][k] * matB[k][j];
-}
-
-void ikj_multiplication(double** matA, double** matB, double** res_mat, int n)
-{
-    for (int i = 0; i < n; i++)
-		for (int k = 0; k < n; k++)
-			for (int j = 0; j < n; j++)
-				res_mat[i][j] += matA[i][k] * matB[k][j];
-}
-
 bool is_arrays_equal(double** first, double** second, int n)
 {
     for(int i = 0; i < n; i++)
