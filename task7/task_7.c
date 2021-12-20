@@ -14,7 +14,7 @@ int dot_product(int *x, int *y, int n) {
 
 int main(int argc, char *argv[])
 {
-    int i, rank, size, result;
+    int rank, size, result;
     int* x = new int[N];
     int* y = new int[N];
 
