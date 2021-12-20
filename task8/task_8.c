@@ -38,11 +38,13 @@ int main(int argc, char *argv[])
 		}
 		elapsed_time = MPI_Wtime() - start_time;
 
-        int L = N * sizeof(int);
-        double bandwidth = 2.0 * loop_count * L / elapsed_time / 1024 / 1024;
-        double latency = elapsed_time / (2.0 * loop_count);
-
-		if(rank == 0) cout << "Length: " << L << " bytes, bandwidth: " << bandwidth << " MB/s, latency: " << latency << endl;
+        if (rank == 0)
+        {
+            int L = N * sizeof(int);
+            double bandwidth = 2.0 * loop_count * L / elapsed_time / 1024 / 1024;
+            double latency = elapsed_time / (2.0 * loop_count);
+            cout << "Length: " << L << " bytes, bandwidth: " << bandwidth << " MB/s, latency: " << latency << endl;
+        }
 		free(x);
 
 		N *= 10;
